@@ -7,13 +7,13 @@ import (
 	"appengine"
 )
 
-var appengine.Context TestAppEngineCtx
+var TestAppEngineCtx appengine.Context
 
 // this function is for test package init
-func TestBeegoInit(apppath string, testCtx appengine.Context) {
+func TestBeegaeInit(apppath string, testCtx appengine.Context) {
 	AppPath = apppath
 	RunMode = "test"
-    TestAppEngineCtx = testCtx
+	TestAppEngineCtx = testCtx
 	AppConfigPath = filepath.Join(AppPath, "conf", "app.conf")
 	err := ParseConfig()
 	if err != nil && !os.IsNotExist(err) {
